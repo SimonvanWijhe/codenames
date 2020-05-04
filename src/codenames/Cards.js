@@ -7,7 +7,14 @@ function Cards(props) {
   return (
     <div className="card-deck">
       {cardData.map(function (data, key) {
-        return <Card key={key} cardData={data} spySwitch={props.spySwitch} />;
+        return (
+          <Card
+            key={key}
+            cardData={data}
+            spySwitch={props.spySwitch}
+            subtractCard={props.subtractCard}
+          />
+        );
       })}
     </div>
   );

@@ -1,5 +1,5 @@
-export function getCardData() {
-  const colors = decideColor();
+export function getCards(startPlayer) {
+  const colors = decideColor(startPlayer);
   const words = getWords();
   return colors.map(function (card, i) {
     return { color: card, word: words[i] };
@@ -36,15 +36,8 @@ export function getWords() {
   ];
 }
 
-function decideColor() {
-  // const amount = {
-  //   blue: 9,
-  //   red: 8,
-  //   black: 1,
-  //   empty: 7,
-  // };
+function decideColor(startPlayer) {
   const colors = [
-    "blue",
     "blue",
     "blue",
     "blue",
@@ -70,6 +63,8 @@ function decideColor() {
     "empty",
     "empty",
   ];
+
+  colors.push(startPlayer);
 
   return shuffleArray(colors);
 }
