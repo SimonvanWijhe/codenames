@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Cards from "./Cards";
 import Top from "./Top";
 import Bottom from "./Bottom";
+import Clock from "./components/Clock";
 
 function Board(props) {
   const [spySwitch, setSpySwitch] = useState(false);
@@ -33,6 +34,7 @@ function Board(props) {
         subtractCard={subtractCard}
       />
       <Bottom spySwitch={spySwitch} onSpySwitchChange={onSpySwitchChange} />
+      <Clock />
       {console.log(winnerAnimation)}
       {winnerAnimation && (
         <>
